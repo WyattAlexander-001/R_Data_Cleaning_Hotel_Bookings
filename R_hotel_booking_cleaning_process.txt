@@ -1,0 +1,53 @@
+#Hotel Booking Demand Datasets (https://www.sciencedirect.com/science/article/pii/S2352340918315191)
+#Info: https://www.kaggle.com/jessemostipak/hotel-booking-demand
+
+#Packages needed:
+install.packages("tidyverse")
+install.packages("skimr")
+install.packages("janitor")
+
+library(tidyverse)
+library(skimr)
+library(janitor)
+
+#Loading data:
+bookings_df <- read_csv("hotel_bookings.csv")
+
+#Checking your data first
+head(bookings_df)
+
+#Summary
+str(bookings_df)
+colnames(bookings_df)
+skim_without_charts(bookings_df)
+
+##Cleaning Process
+#Interested in following variables: hotel, is_canceled, lead_time
+#Creating new data frame called trimmed_df, as to preserve RAW data
+
+trimmed_df <- bookings_df %>% 
+  select(hotel, is_canceled, lead_time)
+
+#Renaming hotel to hotel_type to be more specific/clear
+trimmed_df %>% 
+  select(hotel, is_canceled, lead_time) %>% 
+  rename(hotel_type = hotel)
+
+#Combining month and year into one column with unite
+example_df <- bookings_df %>%
+  select(arrival_date_year, arrival_date_month) %>% 
+  unite(arrival_month_year, c("arrival_date_month", "arrival_date_year"), sep = " ")
+
+#created new column that summed all the adults, children, and babies on a reservation for the total number of people
+example_df <- bookings_df %>%
+  mutate(guests = adults + children + babies)
+
+head(example_df)
+
+#Total numbe of canceled bookings and average lead time for booking
+
+example_df <- bookings_df %>%
+  summarize(number_canceled = sum(is_canceled),
+            average_lead_time = mean(lead_time))
+
+head(example_df)

@@ -38,7 +38,7 @@ example_df <- bookings_df %>%
   select(arrival_date_year, arrival_date_month) %>% 
   unite(arrival_month_year, c("arrival_date_month", "arrival_date_year"), sep = " ")
 
-#created new column that summed all the adults, children, and babies on a reservation for the total number of people
+#Created new column that summed all the adults, children, and babies on a reservation for the total number of people
 example_df <- bookings_df %>%
   mutate(guests = adults + children + babies)
 

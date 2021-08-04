@@ -14,8 +14,8 @@ Purpose of project was to import a hotel dataset, clean and then present visuals
 
 #Analysis
 *Found total number of canceled bookings and average lead time for booking
-*Found guest(s) with children do not affect hotel booking (Image 1)
-*Found guest(s) without children book more weekend nights (Image 2)
+*Found guest(s) with children do not affect hotel booking (Image 1).
+*Found guest(s) without children book more weekend nights (Image 2).
 
 # Children do not affect hotel booking timing
 

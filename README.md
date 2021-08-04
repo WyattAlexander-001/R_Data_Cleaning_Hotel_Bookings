@@ -19,7 +19,7 @@ Purpose of project was to import a hotel dataset, clean and then present visuals
 
 # Children do not affect hotel booking timing
 
-![ ](images/booking_lead_vs_number of children.PNG)
+![ ](https://github.com/WyattAlexander-001/R_Data_Cleaning_Hotel_Bookings/blob/main/images/booking_lead_vs_number%20of%20children.PNG)
 
 # Guests without children book more weekend nights
 

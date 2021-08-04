@@ -44,7 +44,7 @@ example_df <- bookings_df %>%
 
 head(example_df)
 
-#Total numbe of canceled bookings and average lead time for booking
+#Total number of canceled bookings and average lead time for booking
 
 example_df <- bookings_df %>%
   summarize(number_canceled = sum(is_canceled),
